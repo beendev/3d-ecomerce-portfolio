@@ -196,7 +196,7 @@ export default function Home() {
                 <h2 className="text-3xl md:text-8xl font-serif leading-tight mb-8 uppercase tracking-tighter text-black flex flex-col md:block items-center">
                     NOTRE <span className="inline-block h-[40px] md:h-auto w-[100px] md:w-[320px]"></span> VISION
                     <br className="hidden md:block"/>
-                    <span className="md:inline-block">ALLIE DESIGN & PERFORMANCE</span>
+                    <span className="md:inline-block">ALLIE DESIGN & PERFORMANCE </span>
                 </h2>
                 
                 <div className="h-[1px] w-16 md:w-24 bg-black mx-auto mb-8 md:mb-12 opacity-20"></div>
@@ -206,7 +206,7 @@ export default function Home() {
                 </button>
             </div>
         </div>
-
+ 
         {/* FOOTER BAR */}
         <div className={`flex flex-col md:flex-row md:items-end justify-between border-t border-black/5 pt-8 pointer-events-auto transition-all duration-700 ${step === 3 ? 'opacity-0 translate-y-10' : 'opacity-100'}`}>
             <div className="flex gap-8 md:gap-16 justify-center md:justify-start overflow-x-auto no-scrollbar pb-4 md:pb-0">
@@ -224,7 +224,7 @@ export default function Home() {
                     <span className="text-[9px] text-gray-400 uppercase tracking-widest font-bold">450.00 €</span>
                 </div>
                 <button onClick={() => { setIsAnimating(true); setTimeout(addToBag, 200); }} className="bg-black text-white flex-1 md:flex-none px-8 md:px-12 py-4 text-[10px] font-bold uppercase tracking-[0.2em] active:scale-95 transition">
-                    {isAnimating ? 'Added ✓' : 'Add to Bag →'}
+                    {isAnimating ? 'Added ✓' : 'Add to Bag →'} 
                 </button>
             </div>
         </div>
