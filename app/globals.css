@@ -5,17 +5,38 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Configuration de base pour la 3D */
-html, body {
+/* ============================================================ */
+/* 🛡️ SCALING SÉCURISÉ (Fix Samsung & Laptop)                   */
+/* ============================================================ */
+
+html {
+  /* PAR DÉFAUT : Taille standard (16px).
+     Ton écran Samsung, les MacBook et les écrans 1080p utiliseront ça.
+     Tout redeviendra normal chez toi. */
+  font-size: 16px;
+}
+
+/* UNIQUEMENT pour les écrans géants (Vraie 2K/4K de bureau)
+   On ne déclenche le grossissement que si la largeur dépasse 2200px. 
+   Ton écran faisant ~1646px, il ne sera pas touché par ce zoom. */
+@media (min-width: 2200px) {
+  html {
+    font-size: 1.2vw; /* Ici on grossit pour la 4K */
+  }
+}
+
+/* ============================================================ */
+
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Important pour éviter les scrollbars parasites */
-  background-color: #f0f0f0; /* Couleur de fond par défaut */
+  overflow-x: hidden;
+  background-color: #f0f0f0;
 }
 
-
+/* Ton curseur */
 .cursor-dot {
   pointer-events: none;
   position: fixed;
@@ -28,9 +49,10 @@ html, body {
   transform: translate(-50%, -50%);
   transition: width 0.2s, height 0.2s, background-color 0.2s;
   z-index: 9999;
-  mix-blend-mode: difference; /* Pour qu'on le voie sur fond noir et blanc */
+  mix-blend-mode: difference;
   background-color: transparent;
 }
+
 body:hover .cursor-dot {
     opacity: 1;
 }
